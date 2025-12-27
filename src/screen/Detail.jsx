@@ -4,6 +4,7 @@ import React, { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { StarIcon } from "@heroicons/react/20/solid";
 import RelatedProducts from "@/components/RelatedProducts";
+import SEO from "@/components/SEO";
 const Detail = () => {
   let { id } = useParams();
   let { fetchProduct, productObject, error, loading, productArray } =
@@ -67,7 +68,7 @@ const Detail = () => {
       { name: "2XL", inStock: true },
       { name: "3XL", inStock: true },
     ],
-    description: description, 
+    description: description,
     highlights: [
       "Hand cut and sewn locally",
       "Dyed with our proprietary colors",
@@ -97,6 +98,11 @@ const Detail = () => {
 
   return (
     <div className="bg-white">
+      <SEO
+        title={product.name}
+        description={product.description}
+        image={product.images[0]?.src}
+      />
       <div className="pt-6">
         <nav aria-label="Breadcrumb">
           <ol

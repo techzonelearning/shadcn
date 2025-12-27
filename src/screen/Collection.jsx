@@ -2,6 +2,7 @@ import SingleProductCart from "@/components/SingleProductCart";
 import { ProductProvider } from "@/context/ContextProvider";
 import { Loader2 } from "lucide-react";
 import React, { useContext } from "react";
+import SEO from "@/components/SEO";
 
 const Collection = () => {
   let { error, productArray, loading, category } = useContext(ProductProvider);
@@ -19,11 +20,13 @@ const Collection = () => {
     );
   return (
     <div className="px-20 py-8">
+      <SEO
+        title="Collections"
+        description="Explore our curated collections of premium products."
+      />
       {category.map((item, index) => (
         <div key={index}>
-          <h1 className="text-3xl underline font-black uppercase">
-            {item}
-          </h1>
+          <h1 className="text-3xl underline font-black uppercase">{item}</h1>
 
           <div className="flex gap-4 justify-center flex-wrap py-10">
             {productArray.length > 0 &&

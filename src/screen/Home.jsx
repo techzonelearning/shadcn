@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ProductProvider } from "@/context/ContextProvider";
 import { Loader2, X } from "lucide-react";
 import React, { useContext } from "react";
+import SEO from "@/components/SEO";
 
 const Home = () => {
   let { error, filterProduct, loading, setSearch } =
@@ -24,6 +25,11 @@ const Home = () => {
 
   return (
     <div className="px-20">
+      <SEO
+        title="Home"
+        description="Browse our wide collection of premium products. Best prices and quality guaranteed."
+        keywords="shopping, ecommerce, buy online, best products"
+      />
       <ButtonGroups />
       <div className="flex gap-4 justify-center flex-wrap py-6">
         {filterProduct.length > 0 ? (

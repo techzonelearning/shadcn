@@ -59,7 +59,7 @@ function ContextProvider({ children }) {
     }
     if (search) {
       let filter = productArray.filter((item) =>
-        item.title.toLowerCase().trim().includes(search.toLowerCase().trim())
+        item.title.toLowerCase().trim().includes(search.toLowerCase().replace(/\s+/g, "").trim())
       );
       setFilterProduct(filter);
     }

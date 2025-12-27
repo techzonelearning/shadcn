@@ -4,10 +4,14 @@ import App from "./App.jsx";
 import { ContextProvider } from "./context/ContextProvider";
 import { BrowserRouter } from "react-router-dom";
 
+import { HelmetProvider } from "react-helmet-async";
+
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <ContextProvider>
-      <App />
-    </ContextProvider>
+    <HelmetProvider>
+      <ContextProvider>
+        <App />
+      </ContextProvider>
+    </HelmetProvider>
   </BrowserRouter>
 );
