@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import { ContextProvider } from "./context/ContextProvider";
 import { BrowserRouter } from "react-router-dom";
 
-import { HelmetProvider } from "react-helmet-async";
+import { HelmetProvider } from "react-helmet";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
